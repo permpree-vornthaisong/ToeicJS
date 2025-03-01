@@ -1,0 +1,13 @@
+@import "tailwindcss";
+/* src/App.css */
+.special-bg {
+    background: #CFD8DC;
+    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+  }
+  
+  /* src/App.css */
+.app-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-top: 0px;
+}

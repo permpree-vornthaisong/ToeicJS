@@ -1,0 +1,26 @@
+/* src/components/SidebarComponent.css */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c2f38;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .sidebar-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar-button:hover {
+    color: #1e90ff;
+  }
+  
