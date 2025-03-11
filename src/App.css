@@ -1,13 +1,34 @@
 @import "tailwindcss";
-/* src/App.css */
+
+/* กำหนดพื้นหลังของทั้งหน้าให้เป็นสีที่ต้องการ */
+html, body {
+  background-color: #FEF9E1 !important; /* ป้องกันการ override bg-[rgb(211,50,50)]  */ 
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ใช้ gradient เป็นพื้นหลังหลัก */
 .special-bg {
-    background: #CFD8DC;
-    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
-  }
-  
-  /* src/App.css */
+  background-color: #FEF9E1;
+ 
+}
+
+/* ป้องกัน .app-container มีสีพื้นหลังผิดพลาด */
 .app-container {
   max-width: 1800px;
   margin: 0 auto;
   padding-top: 0px;
+  background: none; /* ลบ background ถ้ามี */
+}
+
+/* แก้ปัญหา Swiper/Panorama มีพื้นหลังผิดพลาด */
+.panorama-slider {
+  background: transparent !important; /* ลบพื้นหลังที่ถูกกำหนดโดย Swiper */
+}
+
+/* ป้องกัน Swiper เปลี่ยนพื้นหลังผิดพลาด */
+.swiper {
+  background: transparent !important;
 }

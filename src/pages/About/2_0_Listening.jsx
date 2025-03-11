@@ -6,7 +6,7 @@ import GradientProgressBar from "../../components/GradientProgressBar";
 import "@fontsource/prompt"; // Defaults to weight 400
 import "@fontsource/prompt/400.css"; // Specify weight
 import "@fontsource/prompt/400-italic.css"; // Specify weight and style
-import Choice from "../../components/choice";
+import Choice from "../../components/1_ChoicePhotoPart1";
 import "./font.css";
 
 const Listening = () => {

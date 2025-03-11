@@ -4,7 +4,7 @@ import "@fontsource/noto-sans-thai"; // Defaults to weight 400
 import "@fontsource/noto-sans-thai/400.css"; // Explicit weight
 import "@fontsource/noto-sans-thai/700.css"; // Bold
 
-import ChoiceQuestions from "../../components/ChoiceQuestions";
+import ChoiceQuestions from "../../components/2_ChoiceQuestionsPart2";
 import InputFieldsQuestions from "../../components/InputFieldsQuestions";
 
 // import "./2_1_ListeningPhoto.css";
@@ -46,7 +46,7 @@ const ListeningQuestions = () => {
     };
   }, []);
   return (
-    <div className="p-4">
+    <div className="p-4 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         <div
           style={{

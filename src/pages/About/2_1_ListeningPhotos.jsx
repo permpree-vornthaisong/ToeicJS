@@ -1,12 +1,7 @@
-// src/pages/About/2_1_ListeningPhoto.jsx
 import React, { useRef, useEffect, useState } from "react";
-import Choice from "../../components/choice";
-import "@fontsource/noto-sans-thai"; // Defaults to weight 400
-import "@fontsource/noto-sans-thai/400.css"; // Explicit weight
-import "@fontsource/noto-sans-thai/700.css"; // Bold
+import Choice from "../../components/1_ChoicePhotoPart1";
+import "@fontsource/noto-sans-thai";
 import InputFieldsListening from "../../components/InputFieldsListening";
-import ChoiceReading from "../../components/ChoiceReading";
-// import "./2_1_ListeningPhoto.css";
 
 const ListeningPhoto = () => {
   const videoRef = useRef(null);
@@ -27,14 +22,13 @@ const ListeningPhoto = () => {
 
     const handleSeeked = () => {
       generatePoster();
-      video.removeEventListener("seeked", handleSeeked); // Remove listener after generating poster
+      video.removeEventListener("seeked", handleSeeked);
     };
 
     if (video) {
       video.addEventListener("loadeddata", () => {
-        // Wait for video data to load
-        video.currentTime = 0.5; // Seek to 1.5 seconds
-        video.addEventListener("seeked", handleSeeked); // Listen for seeked event
+        video.currentTime = 0.5;
+        video.addEventListener("seeked", handleSeeked);
       });
     }
 
@@ -43,9 +37,10 @@ const ListeningPhoto = () => {
         video.removeEventListener("seeked", handleSeeked);
       }
     };
-  }, []);
+  });
+
   return (
-    <div className="p-4">
+    <div className="p-4 text-black">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         <div
           style={{
@@ -85,9 +80,14 @@ const ListeningPhoto = () => {
       </div>
 
       <br />
+      <h2
+        className="text-center text-2xl font-bold"
+        style={{ fontFamily: "'Noto Sans Thai', sans-serif" }}
+      >
+        Listening input
+      </h2>
       <InputFieldsListening />
       <br />
-      <ChoiceReading />
     </div>
   );
 };

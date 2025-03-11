@@ -193,7 +193,7 @@ const InputFieldsConver = () => {
       <button
         type="submit"
         disabled={loading}
-        className="mt-4 px-6 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-300"
+        className="mt-4 px-6 py-2 bg-blue-500 hover:bg-blue-700 text-blackfont-bold rounded-lg transition duration-300"
       >
         {loading ? "Uploading..." : "Submit"}
       </button>

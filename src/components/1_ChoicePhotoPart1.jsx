@@ -4,7 +4,7 @@ import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL1;
 
-const ChoiceQuestions = () => {
+const Choice = () => {
   const [questions, setQuestions] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(null);
@@ -13,7 +13,7 @@ const ChoiceQuestions = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/getAllListeningQuestions`);
+        const response = await axios.get(`${apiUrl}/getAllListenings`);
         if (response.data.length > 0) {
           setQuestions(response.data);
         }
@@ -45,7 +45,7 @@ const ChoiceQuestions = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold text-white mb-4">แบบทดสอบ</h2>
+      <h2 className="text-2xl font-bold text-black mb-4">แบบทดสอบ</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {questions.map((question, index) => (
@@ -92,7 +92,7 @@ const ChoiceQuestions = () => {
       {!isSubmitted && (
         <button
           onClick={handleSubmit}
-          className="px-6 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-300 mt-5"
+          className="px-6 py-2 bg-blue-500 hover:bg-blue-700 text-black font-bold rounded-lg transition duration-300 mt-5"
           disabled={Object.keys(selectedAnswers).length !== questions.length}
         >
           Submit
@@ -100,7 +100,7 @@ const ChoiceQuestions = () => {
       )}
 
       {isSubmitted && (
-        <p className="text-xl font-bold mt-3 text-white">
+        <p className="text-xl font-bold mt-3 text-black">
           คะแนนของคุณ: {score} / {questions.length}
         </p>
       )}
@@ -108,4 +108,4 @@ const ChoiceQuestions = () => {
   );
 };
 
-export default ChoiceQuestions;
+export default Choice;

@@ -1,9 +1,10 @@
+// src/components/Choice.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL1;
 
-const ChoiceReading = () => {
+const ChoiceQuestions = () => {
   const [questions, setQuestions] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(null);
@@ -12,7 +13,7 @@ const ChoiceReading = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/getAllReading`); // แก้ตรงนี้
+        const response = await axios.get(`${apiUrl}/getAllListeningQuestions`);
         if (response.data.length > 0) {
           setQuestions(response.data);
         }
@@ -44,7 +45,7 @@ const ChoiceReading = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold text-white mb-4">แบบทดสอบ</h2>
+      <h2 className="text-2xl font-bold text-black mb-4">แบบทดสอบ</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {questions.map((question, index) => (
@@ -53,8 +54,15 @@ const ChoiceReading = () => {
             className="p-4 bg-white shadow-md rounded-lg flex flex-col"
           >
             <p className="text-lg font-semibold">
-              {index + 1}. {question.Question1}
+              {index + 1}. {question.Question}
             </p>
+
+            {question.URL_file && (
+              <video controls width="100%" className="my-2">
+                <source src={question.URL_file} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
 
             {["choice1", "choice2", "choice3", "choice4"].map((key) => (
               <label
@@ -92,7 +100,7 @@ const ChoiceReading = () => {
       )}
 
       {isSubmitted && (
-        <p className="text-xl font-bold mt-3 text-white">
+        <p className="text-xl font-bold mt-3 text-black">
           คะแนนของคุณ: {score} / {questions.length}
         </p>
       )}
@@ -100,4 +108,4 @@ const ChoiceReading = () => {
   );
 };
 
-export default ChoiceReading;
+export default ChoiceQuestions;

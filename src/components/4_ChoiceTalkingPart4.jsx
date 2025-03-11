@@ -58,7 +58,7 @@ const ChoiceConver = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold text-white mb-4">แบบทดสอบ</h2>
+      <h2 className="text-2xl font-bold text-black mb-4">แบบทดสอบ</h2>
 
       {groups.map((group) => (
         <div key={group.id} className="mb-8">
@@ -151,7 +151,7 @@ const ChoiceConver = () => {
       )}
 
       {isSubmitted && (
-        <p className="text-xl font-bold mt-3 text-white">
+        <p className="text-xl font-bold mt-3 text-black">
           คะแนนของคุณ: {score} /{" "}
           {groups.reduce((acc, group) => {
             let questionCount = 0;

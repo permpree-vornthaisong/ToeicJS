@@ -1,7 +1,7 @@
 // src/pages/About/2_1_ListeningPhoto.jsx
 import React, { useRef, useEffect, useState } from "react";
-import Choice from "../../components/choice";
-import ChoiceConver from "../../components/ChoiceConver";
+import Choice from "../../components/1_ChoicePhotoPart1";
+import ChoiceConver from "../../components/3_ChoiceConverPart3";
 import "@fontsource/noto-sans-thai"; // Defaults to weight 400
 import "@fontsource/noto-sans-thai/400.css"; // Explicit weight
 import "@fontsource/noto-sans-thai/700.css"; // Bold
@@ -48,7 +48,7 @@ const ListeningConver = () => {
     };
   }, []);
   return (
-    <div className="p-4">
+    <div className="p-4 text-black">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         <div
           style={{
